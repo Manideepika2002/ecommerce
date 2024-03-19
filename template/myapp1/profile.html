@@ -1,0 +1,50 @@
+{% extends 'myapp1/base.html' %}
+{% load static %}
+{% block head %}
+<style>
+     #pro1{
+        display: flex;
+        margin: auto;
+        top: 100px;
+        height: 400px;
+        box-shadow: 3px 3px rgba(214,214,214,1);
+        /* border: 2px solid red; */
+    }
+    .col-md-8{
+      /* border: 2px solid blue; */
+      position: absolute;
+      top: 15px;
+      left: 270px;
+    }
+    h6{
+      text-align: left;
+    }
+     *{
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2.5;} 
+</style>	
+{% endblock head %}
+{% block body %}
+{%for profile in profile%}
+<div class="card mb-3" style="max-width: 800px;" id="pro1">
+  <div class="row g-0" id="pro2">
+    <div class="col-md-4">
+      <img src="{{profile.profile_image.url}}" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h6><strong>Name : </strong>{{profile.full_name}}</h6>
+        <h6><strong>Designation : </strong>{{profile.designation}}</h6>
+        <h6><strong>Mobile Number : </strong>{{profile.mobile_number}}</h6>
+        <h6><strong>Summary : </strong>{{profile.profile_summary}}</h6>
+        <h6><strong>City : </strong>{{profile.city}}</h6>
+        <h6><strong>State : </strong>{{profile.state}}</h6>
+        <h6><strong>Country : </strong>{{profile.country}}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+{%endfor%}
+{% endblock body %}

@@ -1,0 +1,64 @@
+{% extends 'myapp1/base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'myapp1/base1.css' %}">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+	#sub-nav2{
+width: 60%;
+margin: auto;
+border: 2px solid rgb(240, 233, 233);
+border-radius: 100px;
+box-shadow: 2px 2px rgb(224, 215, 215);
+}
+#sub-nav3{
+list-style: none;
+display: flex;
+justify-content: space-around;
+}
+</style>
+{% endblock head %}
+
+{% block body %}
+<br>
+<div id="sub-nav1">
+    <div id="sub-nav2" >
+        <ul class="nav justify-content-center" id="sub-nav3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'myapp1:formals'%}"><b>Formals</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'myapp1:tshirts'%}"><b>T-shirts</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'myapp1:suits'%}"><b>Suits</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'myapp1:tops'%}"><b>Tops</b></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'myapp1:kurtas'%}"><b>Kurtas</b></a>
+            </li>
+          </ul>
+ 
+     </div>
+ </div>
+ <br>    
+
+	<div class="row">
+		{%for product in products%}
+		<div class="col-lg-4">
+			<a href="{% url 'myapp1:formals_product_detail' product.pk %}"><img class="thumbnail" src="{{product.image.url}}" alt="loading" style="width: 300px; height: 300px; box-shadow: 2px 2px rgba(214,214,214,1);"></a>
+			<div class="box-element product">
+				<h6><strong>{{product.title}}</strong></h6>
+				<hr>
+				<button href="{% url 'myapp1:view_cart' %}"  class="btn btn-outline-success add-btn" id="btn">Add to Cart</button>
+				<a class="btn btn-outline-info" href="{% url 'myapp1:formals_product_detail' product.pk %}" id="btn1">View</a>
+				<h4 style="display: inline-block;" id="btn2"><strong>{{product.prize}}</strong></h4>
+
+			</div>
+		</div>
+		{%endfor%}
+	</div>
+
+{% endblock body %} 

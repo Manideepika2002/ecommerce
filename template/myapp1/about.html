@@ -1,0 +1,39 @@
+{% extends "myapp1/base.html" %}
+{% load static %}
+{% block head %}
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="{% static 'myapp1/about.css' %}">
+<style>
+    #about{
+        width: 90%;
+        margin: auto;
+    }
+    #about1{
+        margin-left: 25px;
+    }
+    *{
+        overflow-x: hidden;
+    }
+</style>
+{% endblock head %}
+
+{% block body %}
+<br>
+<div id="about" >
+    <!-- <div>
+        <img src="{% static 'myapp1/images/about2.webp' %}" alt="">
+        <p>we strive to transform the fashion needs and desires of today’s men and work tirelessly to deliver the handsome U. By listening to our customers, we foresee future trend aim to partner men to be loved by all. At Blackberrys, our commitment to excellence is woven into the very fabric of our brand. We meticulously design every aspect of our apparel and products to provide you with more than just clothing and cloak you with confidence.
+        </p><br>
+        <p>With our belief in setting new benchmarks, we’re bringing innovations in our designs every day keeping the modern men in the center of it all. Our approach goes beyond the ordinary, ensuring that every Blackberrys creation is a testament to quality, style, and the pursuit of excellence. With us, you're not just wearing clothing; you're embracing a philosophy of aspiration and achievement as we are your partner in the journey towards success.
+        </p>
+    </div> -->
+    <div>
+        <img src="{% static 'myapp1/images/about.webp' %}"  class="d-block w-100" alt="">	
+        <br><div id="about1"><h2>INNOVATORS</h2><br><p>Innovation runs at the core of everything we create. To cater to the dynamic lifestyle and fashion needs of today's men, we redefine your wardrobe with elegance and functionality. From ensuring unrestricted movements through wrinkle-resistant & stretchable fabric, our designs are meticulously crafted to elevate your everyday to new heights of style and comfort. We also provide an all-weather technology with the help of 37.5 active particles permanently embedded into a single fibre to ensure you always show the way in style. We believe that staying at the forefront of innovation is key to empowering our customers to conquer their daily challenges with confidence and style.</p>
+        <br><h2>FIX EXPERT</h2><br><p>Keeping you and your unsaid fashion needs in mind, we craft each fit to match the unique you. At Blackberrys, we are dedicated to the belief that the perfect fit is not just a fashion statement but an embodiment of a gentleman's distinctive style. As fit experts, we take this commitment seriously and create each fit to match the unique you. Our alteration service, tailored to make your garment truly one-of-a-kind that fits you like it’s made just for you. With unwavering attention to detail and a commitment to perfection, we ensure that every garment is not only stylish but also tailored to perfection. Your style, your fit – that's the Blackberrys difference.</p></div>
+     </div><br><br>
+    <div>
+        <img src="{% static 'myapp1/images/about1.webp' %}" height="500px"  class="d-block w-100" alt="">	
+    </div><br>
+</div>
+{% endblock body %}

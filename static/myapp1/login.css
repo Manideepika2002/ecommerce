@@ -1,0 +1,21 @@
+/* #nav{
+    border: 2px solid rgb(251, 241, 241);
+    height: 50px;
+    width: 100%;
+  }
+  #demo{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    list-style: none;
+    width: 50%;
+    margin-top: -30px;
+  }
+  .btn-group{
+    margin-top: -30px;
+    margin-left: 85%;
+    height: 40px;
+  }
+  .btn btn-outline-primary:hover{
+    background-color: orange;
+  } */
